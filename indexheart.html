@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>insert-data</title>
+
+<!--    <link href="{{ url_for('static', filename='heartstyle.css') }}" rel="stylesheet">-->
+<!--    <link rel="stylesheet"  type="text/css" href="static/heartstyle.css">-->
+</head>
+<style>
+    input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit],input[type=reset]{
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit],input[type=reset]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+.heart-form{
+    margin-top: 100px;
+    border-radius: 5px;
+    background-color: #f7f5f5f5;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.row {
+    margin: 0 auto;
+        margin-top: 0px;
+        margin-left: auto;
+    max-width: 1140px;
+}
+
+</style>
+<body>
+<div class="row">
+<form class="heart-form" name="sendheartdata" id="sendheartdata" action="/tt" method="post" novalidate>
+        <div><label for="name">Name:</label><input type="text"  name="name" >
+        </div>
+<!--GENDER-->
+        <div>`
+          <label for="gender">Gender:  </label>
+            <select id="gender" name="gender" required>
+
+                <option disabled selected value>--select your Gender--</option>
+                <option value="0">Male</option>
+                <option value="1">Female</option>
+                <option value="2">Transgender</option>
+            </select>
+        </div>
+<!--AGE-->
+        <div>
+            <label for="age">Age</label><input type="number" id="age" name="age" min="1" max="150" required>
+        </div>
+<!--CHEST-PAIN-->
+        <div>
+            <label for="chestpain">Chest Pain</label>
+            <select id="chest" name="chest" required>
+
+                <option disabled selected value>--select an option--</option>
+                <option value="0">Typical Angina</option>
+                <option value="1">Atypical Angina</option>
+                <option value="2">Non- Anginal Pain</option>
+                <option value="3">Asympotomatic</option>
+            </select>
+        </div>
+<!--BLOOD-PRESSURE-->
+        <div>
+            <label for="bloodpressure">Blood Pressure</label><input type="number" id="bloodpressure" name="bloodpressure" min="50" max="300" required >
+        </div>
+<!--CHOLESTEROL-->
+        <div>
+            <label for="cholesterol">Cholesterol:</label><input type="number"  name="cholesterol" min="0" max="50" required>
+        </div>
+<!--BLOOD-SUGAR-->
+        <div>
+        <label for="fbs">Fasting Blood Sugar > 120 mg/dl</label>
+                <select  id="fbs" name="fbs" required>
+                  <option disabled selected value> -- Select an Option -- </option>
+                  <option value = "0">False</option>
+                  <option value = "1">True</option>
+                </select>
+        </div>
+<!--ECG-->
+        <div>
+            <label for="RestingElectrocardiographic">Resting Electrocardiographic:</label>
+            <select  id="ecg" name="ecg">
+                <option disabled selected value>--select an option--</option>
+                <option value="0">Normal</option>
+                <option value="1">ST-T Wave</option>
+                <option value="2">left ventricular hypertrophy</option>
+            </select>
+        </div>
+<!--MAX-HEART-RATE-->
+        <div>
+            <label for="maxheartrate">Maximum Heart Rate:</label>
+            <input type="number" id="maxheartrate" name="maxheartrate" min="1" max="150" required></td></tr>
+        </div>
+<!--INDUCED-ANGINA-->
+        <div>
+            <label for="exerciseinducedangina">Exercise Induced Angina:</label>
+            <select id="induced" name="induced" required>
+                <option disabled selected value>--select an option--</option>
+                <option value="0">Yes</option>
+                <option value="1">No</option>
+            </select>
+        </div>
+<!--        SLOPE-->
+        <div>
+            <label for="slope">Slope for ST Depression:</label>
+            <select id="Slope" name="Slope" required>
+
+                <option disabled selected value>--select an option--</option>
+                <option value="0">Up-Sloping</option>
+                <option value="1">Flat</option>
+                <option value="2">Down-sloping</option>
+            </select>
+        </div>
+<!--VESSELS -->
+        <div><label for="majorvessel"> No. of Major Vessel:</label>
+            <select id="vessel" name="vessel" required>
+                <option disabled selected value>--select an option--</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+<!--THALASSEMIA-->
+        <div><label for="thalassemia"> Thalassemia:</label>
+            <select id="thal" name="thal" required>
+                <option disabled selected value>--select an option--</option>
+                <option value="0">Normal</option>
+                <option value="1">Fixed Defect</option>
+                <option value="2">Reversible Defect</option>
+            </select>
+        </div>
+
+            <input type="submit" name="submit">
+            <input type="reset">
+<!--&lt;!&ndash;RESULT-AREA&ndash;&gt;-->
+<!--        <div>-->
+<!--            <label for="result"> Result:</label><textarea name="result">-->
+<!--        </div>-->
+
+</form>
+</div>
+
+</body>
+</html>
