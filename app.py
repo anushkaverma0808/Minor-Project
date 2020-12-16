@@ -13,9 +13,18 @@ app = Flask(__name__)
 
 
 # Bind home function to URL
-@app.route('/')
+@app.route('/form')
 def home():
     return render_template('minorproject.html')
+
+@app.route('/')
+def home_page():
+    return render_template('homepage.html')
+
+@app.route('/loc')
+def location_doc():
+    return render_template('loc.html')
+
 
 
 # Bind predict function to URL
